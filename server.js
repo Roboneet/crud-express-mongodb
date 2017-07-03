@@ -58,4 +58,13 @@ MongoClient.connect('mongodb://abcdefg:abcdefg@ds145302.mlab.com:45302/list_app'
 			res.send(result)
 		})
 	})
+
+	app.delete('/cartoons', (req, res)=>{
+		db.collection('cartoons').findOneAndDelete({
+			name: req.body.name
+		},(err, result)=>{
+			if(err) return req.send(500, err)
+				res.send({message: 'Thats how you bust Doofenshmirtz !'})
+		})
+	})
 })
