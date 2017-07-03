@@ -1,17 +1,34 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+const MongoClient = require('mongodb').MongoClient
 
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.listen(3000, function(){
-	console.log("listening on port 3000")
-})
+var db
 
-app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/index.html')
-})
+MongoClient.connect('mongodb://abcdefg:abcdefg@ds145302.mlab.com:45302/list_app', (err, database) => {
 
-app.post('/new', (req, res) => {
-	console.log(req.body)
+	if(err)console.log("YEAh , it's an error : \n "+err);
+	
+	db = database
+
+	app.listen(3000, function(){
+		console.log("listening on port 3000")
+	})
+
+	app.get('/', (req, res) => {
+		res.sendFile(__dirname + '/index.html')
+	})
+
+	app.post('/new', (req, res) => {
+		db.collection('cartoons').save(req.body, (err, result) => {
+			if(err)console.log(err);
+
+			console.log('saved to database');
+			res.redirect('/');
+		})
+	})
+
+
 })
