@@ -6,19 +6,21 @@
 </head>
 <body>
 	<h1>My Favorite Cartoons</h1>
-	<form action="/new" method="POST">
+	<form action="/cartoons" method="POST">
 		<input type="text" placeholder="cartoon name" name="name">
 		<input type="text" placeholder="description" name="description">
 		<button type="submit">Submit</button>
 	</form>
-	
+	<div><h2>Spread Doofenshmirtz messages on phineas and ferb's posts! </h2>
+	<button id="update">Doofenshmirtz rules</button></div>
 	<ul class="cartoons">
 		<% for(var i = 0; i<cartoons.length; i++){ %>
 			<li class="cartoon">
-				<span><%= cartoons[i].name %></span>
+				<span><%= cartoons[i].name %></span><br>
 				<span><%= cartoons[i].description %></span>
 			</li>
 		<% } %>
 	</ul>
+	<script src="main.js"></script>
 </body>
 </html>
