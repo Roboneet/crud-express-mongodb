@@ -4,6 +4,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.set('view engine', 'ejs')
 
 var db
 
@@ -18,7 +19,10 @@ MongoClient.connect('mongodb://abcdefg:abcdefg@ds145302.mlab.com:45302/list_app'
 	})
 
 	app.get('/', (req, res) => {
-		res.sendFile(__dirname + '/index.html')
+		var cursor = db.collection('cartoons').find()
+		cursor.toArray((err, result)=>{
+			res.render('index.ejs', {cartoons:result})
+		})
 	})
 
 	app.post('/new', (req, res) => {

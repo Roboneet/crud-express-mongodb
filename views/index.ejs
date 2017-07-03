@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1>My Favorite Cartoons</h1>
+	<form action="/new" method="POST">
+		<input type="text" placeholder="cartoon name" name="name">
+		<input type="text" placeholder="description" name="description">
+		<button type="submit">Submit</button>
+	</form>
+	
+	<ul class="cartoons">
+		<% for(var i = 0; i<cartoons.length; i++){ %>
+			<li class="cartoon">
+				<span><%= cartoons[i].name %></span>
+				<span><%= cartoons[i].description %></span>
+			</li>
+		<% } %>
+	</ul>
+</body>
+</html>
