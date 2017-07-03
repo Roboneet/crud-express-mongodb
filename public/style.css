@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body{
+	background: #88ddaa;
+	font: 18px/22px 'Lato', sans-serif;
+}
+
+*{
+	margin: 0;
+	padding:0;
+}
+
+h1{
+	color: #fff;
+	background: #212121;
+	font-size: 50px;
+	line-height: 70px;
+	padding: 20px;
+	
+	margin-bottom: 30px;
+}
+
+input{
+	font-size: 30px;
+	line-height: 50px;
+	float: right;
+	display: block;
+	clear: both;
+	margin: 2px 30px;
+	border-radius: 6px;
+	background-color: #fff;
+	border-width: 0px;
+	padding: 10px;
+}
+
+form button{
+	float: right;
+	display: block;
+	clear: both;
+	margin: 10px 30px;
+	
+}
+
+button{
+	font-size: 22px;
+	line-height: 40px;
+	padding: 10px;
+	border-radius: 6px;
+	background-color: #eee;
+	border-width: 0px;
+}
+
+.options{
+	width: 950px;
+	margin: 0 40px;
+
+}
+
+.options h2{
+	margin: 30px 0;
+	color: #444;
+}
+
+.list{
+	/*border: 1px solid #000;*/
+	margin: 20px 30px;
+
+}
+
+.list li{
+	list-style: none;
+	/*border: 1px solid #000;*/
+	width: 500px;
+	margin: 10px;
+	padding: 30px;
+	background: #212121;
+	color: #eee;
+	box-shadow: 0 2px 2px #000;
+	border-radius: 6px;
+}
+
+.list li span:nth-of-type(2){
+	float: right;
+}
+

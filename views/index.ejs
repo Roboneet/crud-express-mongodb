@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Cartoons</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<h1>My Favorite Cartoons</h1>
@@ -11,17 +12,21 @@
 		<input type="text" placeholder="description" name="description">
 		<button type="submit">Submit</button>
 	</form>
+	<div class="options">
 	<div><h2>Spread Doofenshmirtz messages on phineas and ferb's posts! </h2>
 	<button id="update">Doofenshmirtz rules</button></div>
+	<div><h2>Delete Doofenshmirtz last message</h2><button id="delete">Bust him</button></div>
+	</div>
+	<div class="list">
 	<ul class="cartoons">
 		<% for(var i = 0; i<cartoons.length; i++){ %>
 			<li class="cartoon">
-				<span><%= cartoons[i].name %></span><br>
+				<span><%= cartoons[i].name %></span>
 				<span><%= cartoons[i].description %></span>
 			</li>
 		<% } %>
 	</ul>
-	<div><h2>Delete Doofenshmirtz last message</h2><button id="delete">Bust him</button></div>
+	</div>
 	<script src="main.js"></script>
 </body>
 </html>
